@@ -6,25 +6,28 @@
 void main(){
 int gd=DETECT,gm;
 initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
-int x1,y1,x2,y2,dx,dy,steps,xinc,yinc;
-printf("Enter the values of x1 and y1");
+int x1,y1,x2,y2;
+float dx,dy,steps,x,y,xinc,yinc;
+printf("Enter the values of x1 and y1\n");
 scanf("%d%d",&x1,&y1);
-printf("Enter the values of x2 and y2");
+printf("Enter the values of x2 and y2\n");
 scanf("%d%d",&x2,&y2);
-dx=x2-x1;
-dy=y2-y1;
-if(abs(dx)>abs(dy)){
-steps=abs(dx);
+dx=(float)(x2-x1);
+dy=(float)(y2-y1);
+if(dx>=dy){
+steps=dx;
 }
 else{
-steps=abs(dy);
+steps=dy;
 }
 xinc=dx/steps;
 yinc=dy/steps;
+x=x1;
+y=y1;
 for(int i=1;i<=steps;i++){
-putpixel(x1,y1,RED);
-x1=x1+xinc;
-y1=y1+yinc;
+putpixel(x,y,2);
+x+=xinc;
+y+=yinc;
 }
 getch();
 closegraph();
