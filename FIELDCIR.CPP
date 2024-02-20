@@ -5,14 +5,22 @@
  void main(){
  int gd=DETECT,gm;
  initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
- int x,y,xc,yc,r,p;
+ int xc,yc,r;
+ float x,y,p;
+ printf("Radius\txc\tyc\n");
+ scanf("%d%d%d",&r,&xc,&yc);
  x=0;
  y=r;
- r=100;
- xc=319;
- yc=239;
  p=(5/4)-r;
  do{
+ putpixel(xc+x,yc+y,6);
+ putpixel(xc+x,yc-y,6);
+ putpixel(xc-x,yc+y,6);
+ putpixel(xc-x,yc-y,6);
+ putpixel(xc+y,yc+x,6);
+ putpixel(xc+y,yc-x,6);
+ putpixel(xc-y,yc+x,6);
+ putpixel(xc-y,yc-x,6);
  if(p<0){
  x++;
  p=p+2*x+1;
@@ -22,14 +30,6 @@
  x++;
  p=p+2*x-2*y+1;
  }
- putpixel(xc+x,yc+y,RED);
- putpixel(xc+x,yc-y,RED);
- putpixel(xc-x,yc+y,RED);
- putpixel(xc-x,yc-y,RED);
- putpixel(xc+y,yc+x,RED);
- putpixel(xc+y,yc-x,RED);
- putpixel(xc-y,yc+x,RED);
- putpixel(xc-y,yc-x,RED);
  }while(x<y);
  getch();
  closegraph();
