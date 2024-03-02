@@ -20,7 +20,7 @@ y=y1;
 while(y<=y2){
 putpixel(x,y,7);
 if(steps<0){
-x=x+1;
+y=y+1;
 steps=steps+2*dx;
 }
 else{

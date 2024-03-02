@@ -13,14 +13,14 @@
  y=r;
  p=(5/4)-r;
  do{
- putpixel(xc+x,yc+y,6);
- putpixel(xc+x,yc-y,6);
- putpixel(xc-x,yc+y,6);
- putpixel(xc-x,yc-y,6);
- putpixel(xc+y,yc+x,6);
- putpixel(xc+y,yc-x,6);
- putpixel(xc-y,yc+x,6);
- putpixel(xc-y,yc-x,6);
+ putpixel(xc+x,yc+y,7);
+ putpixel(xc+x,yc-y,7);
+ putpixel(xc-x,yc+y,7);
+ putpixel(xc-x,yc-y,7);
+ putpixel(xc+y,yc+x,7);
+ putpixel(xc+y,yc-x,7);
+ putpixel(xc-y,yc+x,7);
+ putpixel(xc-y,yc-x,7);
  if(p<0){
  x++;
  p=p+2*x+1;

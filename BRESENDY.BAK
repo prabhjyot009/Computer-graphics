@@ -16,7 +16,8 @@ dy=y2-y1;
 steps=2*dx-dy;
 x=x1;
 y=y1;
-while(x<=x2){
+
+while(y<=y2){
 putpixel(x,y,2);
 if(steps<0){
 x=x+1;

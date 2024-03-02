@@ -13,6 +13,14 @@
  y=r;
  p=(5/4)-r;
  do{
+ putpixel(xc+x,yc+y,6);
+ putpixel(xc+x,yc-y,6);
+ putpixel(xc-x,yc+y,6);
+ putpixel(xc-x,yc-y,6);
+ putpixel(xc+y,yc+x,6);
+ putpixel(xc+y,yc-x,6);
+ putpixel(xc-y,yc+x,6);
+ putpixel(xc-y,yc-x,6);
  if(p<0){
  x++;
  p=p+2*x+1;
@@ -22,14 +30,6 @@
  x++;
  p=p+2*x-2*y+1;
  }
- putpixel(xc+x,yc+y,6);
- putpixel(xc+x,yc-y,6);
- putpixel(xc-x,yc+y,6);
- putpixel(xc-x,yc-y,6);
- putpixel(xc+y,yc+x,6);
- putpixel(xc+y,yc-x,6);
- putpixel(xc-y,yc+x,6);
- putpixel(xc-y,yc-x,6);
  }while(x<y);
  getch();
  closegraph();
