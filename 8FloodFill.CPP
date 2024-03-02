@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <math.h>
-void floodfill4(int x,int y,int fill,int old){
+void floodfill8(int x,int y,int fill,int old){
 int current=getpixel(x,y);
 if(current==old){
 putpixel(x,y,fill);
@@ -17,9 +17,9 @@ floodfill8(x+1,y-1,fill,old);
 floodfill8(x-1,y-1,fill,old);
 }
 }
-void main(){
+int main(){
 int gd=DETECT,gm;
-initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+initgraph(&gd,&gm,(char*)"");
 rectangle(50,50,100,100);
 floodfill8(55,55,4,0);
 getch();

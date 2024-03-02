@@ -4,7 +4,7 @@
 #include<graphics.h>
 int main(){
 int gd=DETECT,gm;
-initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+initgraph(&gd,&gm,(char*)"");
 int x,y,xc,yc,p,r;
 r=100;
 x=0;

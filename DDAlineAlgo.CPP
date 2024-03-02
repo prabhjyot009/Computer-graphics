@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <math.h>
-void main(){
+int main(){
 int gd=DETECT,gm;
-initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+initgraph(&gd,&gm,(char*)"");
 int x1,y1,x2,y2;
 float dx,dy,steps,x,y,xinc,yinc;
 printf("Enter the values of x1 and y1\n");

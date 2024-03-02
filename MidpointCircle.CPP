@@ -2,9 +2,9 @@
  #include<conio.h>
  #include<graphics.h>
  #include<math.h>
- void main(){
+ int main(){
  int gd=DETECT,gm;
- initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+ initgraph(&gd,&gm,(char*)"");
  int xc,yc,r;
  float x,y,p;
  printf("Radius\txc\tyc\n");

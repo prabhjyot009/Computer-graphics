@@ -3,9 +3,9 @@
 #include<math.h>
 #include<graphics.h>
 #include<conio.h>
-void main(){
+int main(){
 int gd=DETECT,gm;
-initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+initgraph(&gd,&gm,(char*)"");
 int x,y,x1,x2,y1,y2,dx,dy,steps;
 printf("Enter the vales of x1 and y1\n");
 scanf("%d%d",&x1,&y1);

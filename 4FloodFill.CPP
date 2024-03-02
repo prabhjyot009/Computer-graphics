@@ -13,9 +13,9 @@ floodfill4(x-1,y,fill,old);
 floodfill4(x,y-1,fill,old);
 }
 }
-void main(){
+int main(){
 int gd=DETECT,gm;
-initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+initgraph(&gd,&gm,(char*)"");
 rectangle(50,50,100,100);
 floodfill4(55,55,4,0);
 getch();

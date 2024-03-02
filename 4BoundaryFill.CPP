@@ -13,9 +13,9 @@ boundaryfill4(x-1,y,fill,boundary);
 boundaryfill4(x,y-1,fill,boundary);
 }
 }
-void main(){
+int main(){
 int gd=DETECT,gm;
-initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+initgraph(&gd,&gm,(char*)"");
 rectangle(50,50,100,100);
 boundaryfill4(55,55,4,15);
 getch();

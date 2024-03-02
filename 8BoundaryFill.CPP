@@ -17,9 +17,9 @@ boundaryfill8(x+1,y-1,fill,boundary);
 boundaryfill8(x-1,y-1,fill,boundary);
 }
 }
-void main(){
+int main(){
 int gd=DETECT,gm;
-initgraph(&gd,&gm,"C:\\TURBOC3\\bgi");
+initgraph(&gd,&gm,(char*)"");
 rectangle(50,50,100,100);
 boundaryfill8(55,55,4,15);
 getch();
