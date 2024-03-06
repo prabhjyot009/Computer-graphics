@@ -20,7 +20,7 @@ boundaryfill8(x-1,y-1,fill,boundary);
 int main(){
 int gd=DETECT,gm;
 initgraph(&gd,&gm,(char*)"");
-rectangle(50,50,100,100);
-boundaryfill8(55,55,4,15);
+rectangle(50,100,250,250);
+boundaryfill8(55,105,15,15);
 getch();
 }
