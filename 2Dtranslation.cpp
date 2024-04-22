@@ -5,9 +5,8 @@
 void main()
 {
     int gd=DETECT,gm;
-    int x1, x2, y1, y2,x3,y3,dx,dy;
+    int x1,y1, x2, y2,x3,y3,dx,dy;
     initgraph(&gd, &gm, (char *)"");
-
 	printf("Enter coordinates of a: ");
 	scanf("%d%d",&x1,&y1);
 	printf("Enter coordinates of b: ");
