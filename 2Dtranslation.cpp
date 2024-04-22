@@ -1,35 +1,29 @@
-//Write a program to implement 2-D translation of a triangle.using a custom coordinate system.
-#include <iostream>
-#include <graphics.h>
-#include <conio.h>
-using namespace std;
+#include<graphics.h>
+#include<conio.h>
+#include<stdio.h>
 
-int main()
+void main()
 {
-    int gd = DETECT, gm;
+    int gd=DETECT,gm;
+    int x1, x2, y1, y2,x3,y3,dx,dy;
     initgraph(&gd, &gm, (char *)"");
-    int x1, y1, x2, y2, x3, y3, tx, ty;
-    printf("Enter the values of x1 and y1\n");
-    scanf("%d %d", &x1, &y1);
-    printf("Enter the values of x2 and y2\n");
-    scanf("%d %d", &x2, &y2);
-    printf("Enter the values of x3 and y3\n");
-    scanf("%d %d", &x3, &y3);
-    printf("Enter the values of tx and ty\n");
-    scanf("%d %d", &tx, &ty);
-    line(x1, y1, x2, y2);
-    line(x2, y2, x3, y3);
-    line(x3, y3, x1, y1);
-    x1 = x1 + tx;
-    y1 = y1 + ty;
-    x2 = x2 + tx;
-    y2 = y2 + ty;
-    x3 = x3 + tx;
-    y3 = y3 + ty;
-    line(x1, y1, x2, y2);
-    line(x2, y2, x3, y3);
-    line(x3, y3, x1, y1);
-    getch();
+
+	printf("Enter coordinates of a: ");
+	scanf("%d%d",&x1,&y1);
+	printf("Enter coordinates of b: ");
+	scanf("%d%d",&x2,&y2);
+	printf("Enter coordinates of c: ");
+	scanf("%d%d",&x3,&y3);
+	line(x1,y1,x2,y2);
+	line(x2,y2,x3,y3);
+	line(x3,y3,x1,y1);
+	printf("Enter the translating factor for x: ");
+	scanf("%d",&dx);
+	printf("Enter the translating factor for y: ");
+	scanf("%d",&dy);
+    line(x1+dx,y1+dy,x2+dx,y2+dy);
+	line(x2+dx,y2+dy,x3+dx,y3+dy);
+	line(x3+dx,y3+dy,x1+dx,y1+dy);
+	    getch();
     closegraph();
-    return 0;
 }
