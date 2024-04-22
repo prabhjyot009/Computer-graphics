@@ -1,4 +1,5 @@
-//Write a program to implement 2-D translation of a triangle.using a custom coordinate system.
+//make a custom coordinate system using 2 lines and then implement 2D translation of a triangle using this custom coordinate system.
+
 #include <iostream>
 #include <graphics.h>
 #include <conio.h>
@@ -17,6 +18,8 @@ int main()
     scanf("%d %d", &x3, &y3);
     printf("Enter the values of tx and ty\n");
     scanf("%d %d", &tx, &ty);
+    line(0, 0, 0, 100);
+    line(0, 0, 100, 0);
     line(x1, y1, x2, y2);
     line(x2, y2, x3, y3);
     line(x3, y3, x1, y1);
