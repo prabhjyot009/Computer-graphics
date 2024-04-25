@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<graphics.h>
-void main(){
+int main(){
 	int gd=DETECT,gm;
     initgraph(&gd, &gm, (char *)"");
 	line(0,250,600,250);
