@@ -1,32 +1,36 @@
-//perform 2D rotation of rectangle about origin
-#include<graphics.h>
-#include<conio.h>
-#include<stdio.h>
-#include<math.h>
-int main() {
-    int gd=DETECT,gm;
-    int x1, y1, x2, y2;
-
-    int x1r, y1r, x2r, y2r;
-
-    int angle;
-    float s, c;
+#include <stdio.h>
+#include <conio.h>
+#include <graphics.h>
+#include <math.h>
+int main()
+{
+    int gd = DETECT, gm;
     initgraph(&gd, &gm, (char *)"");
-    printf("Rotation of rectangle\n");
-    printf("Enter coordinates of point 1: ");
-    scanf("%d%d", &x1, &y1);
-    printf("Enter coordinates of point 2: ");
-    scanf("%d%d", &x2, &y2);
-    rectangle(x1, y1, x2, y2);
-    printf("Enter the angle of rotation: ");
-    scanf("%d", &angle);
-    s = sin(angle * 3.14159 / 180);
-    c = cos(angle * 3.14159 / 180);
-    x1r = x1 * c - y1 * s;
-    y1r = x1 * s + y1 * c;
-    x2r = x2 * c - y2 * s;
-    y2r = x2 * s + y2 * c;
-    rectangle(x1r, y1r, x2r, y2r);
+    line(0, 250, 600, 250);
+    line(300, 0, 300, 500);
+    float x1, x2, x3, x4, y1, y2, y3, y4,x11, x21, x31, x41, y11, y21, y31, y41, angle;
+    printf("Enter x1, x2, x3, x4 and y1, y2, y3, y4:\n");
+    scanf("%f%f%f%f%f%f%f%f", &x1, &x2, &x3, &x4, &y1, &y2, &y3, &y4);
+    printf("Enter rotation angle (in degrees):\n");
+    scanf("%f", &angle);
+    angle = angle * (3.14159 / 180.0);
+    line(x1 + 300, y1 + 250, x2 + 300, y2 + 250);
+    line(x2 + 300, y2 + 250, x3 + 300, y3 + 250);
+    line(x3 + 300, y3 + 250, x4 + 300, y4 + 250);
+    line(x4 + 300, y4 + 250, x1 + 300, y1 + 250);
+    x11 = x1 * cos(angle) - y1 * sin(angle);
+    y11 = x1 * sin(angle) + y1 * cos(angle);
+    x21 = x2 * cos(angle) - y2 * sin(angle);
+    y21 = x2 * sin(angle) + y2 * cos(angle);
+    x31 = x3 * cos(angle) - y3 * sin(angle);
+    y31 = x3 * sin(angle) + y3 * cos(angle);
+    x41 = x4 * cos(angle) - y4 * sin(angle);
+    y41 = x4 * sin(angle) + y4 * cos(angle);
+    setcolor(RED);
+    line(x11 + 300, y11 + 250, x21 + 300, y21 + 250);
+    line(x21 + 300, y21 + 250, x31 + 300, y31 + 250);
+    line(x31 + 300, y31 + 250, x41 + 300, y41 + 250);
+    line(x41 + 300, y41 + 250, x11 + 300, y11 + 250);
     getch();
     closegraph();
 }

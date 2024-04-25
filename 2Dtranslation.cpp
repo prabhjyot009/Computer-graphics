@@ -1,28 +1,25 @@
-#include<graphics.h>
-#include<conio.h>
 #include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
 
-void main()
-{
-    int gd=DETECT,gm;
-    int x1,y1, x2, y2,x3,y3,dx,dy;
+int main(){
+	int gd=DETECT,gm;
     initgraph(&gd, &gm, (char *)"");
-	printf("Enter coordinates of a: ");
-	scanf("%d%d",&x1,&y1);
-	printf("Enter coordinates of b: ");
-	scanf("%d%d",&x2,&y2);
-	printf("Enter coordinates of c: ");
-	scanf("%d%d",&x3,&y3);
-	line(x1,y1,x2,y2);
-	line(x2,y2,x3,y3);
-	line(x3,y3,x1,y1);
-	printf("Enter the translating factor for x: ");
-	scanf("%d",&dx);
-	printf("Enter the translating factor for y: ");
-	scanf("%d",&dy);
-    line(x1+dx,y1+dy,x2+dx,y2+dy);
-	line(x2+dx,y2+dy,x3+dx,y3+dy);
-	line(x3+dx,y3+dy,x1+dx,y1+dy);
-	    getch();
-    closegraph();
+	line(0,250,600,250);
+	line(300,0,300,500);
+	float x1,x2,x3,y1,y2,y3,tx,ty;
+	printf("Enter x1,x2,x3 and y1,y2,y3\n");
+	scanf("%f%f%f%f%f%f",&x1,&x2,&x3,&y1,&y2,&y3);
+	printf("Enter tx and ty\n");
+	scanf("%f%f",&tx,&ty);
+	line(x1+300,y1+250,x2+300,y2+250);
+	line(x2+300,y2+250,x3+300,y3+250);
+	line(x3+300,y3+250,x1+300,y1+250);	
+	x1+=tx;x2+=tx;x3+=tx;
+	y1+=ty;y2+=ty;y3+=ty;
+	setcolor(RED);
+	line(x1+300,y1+250,x2+300,y2+250);
+	line(x2+300,y2+250,x3+300,y3+250);
+	line(x3+300,y3+250,x1+300,y1+250);
+	getch();
 }
