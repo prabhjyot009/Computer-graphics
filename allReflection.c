@@ -17,6 +17,7 @@ int main()
     printf("1.x axis:\n2.y axis:\n3.y=-x axis:\n4.y=x axis:\n");
     printf("Selection:");
     scanf("%d", &s);
+
     switch (s)
     {
     case 1:
