@@ -1,71 +1,52 @@
 #include <stdio.h>
 #include <graphics.h>
 #include <math.h>
-
+void plot(int x1,int x2,int x3,int y1,int y2,int y3){
+	line(x1+300,y1+250,x2+300,y2+250);
+	line(x2+300,y2+250,x3+300,y3+250);
+	line(x1+300,y1+250,x3+300,y3+250);
+}
 int main()
 {
     int gd = DETECT, gm, s;
     initgraph(&gd, &gm, (char *)"");
-    int x1 = 20, y1 = 10, x2 = 10, y2 = 20, x3 = 30, y3 = 20;
-    line(0, 250, 600, 250);
+    int x1,y1,x2,y2,x3,y3;
     line(300, 0, 300, 500);
-    printf("triangle before reflection\n");
+    line(0, 250, 600, 250);
+    printf("Enter x1,x2,x3,y1,y2,y3 : ");
+	scanf("%d %d %d %d %d %d", &x1, &x2, &x3, &y1, &y2, &y3);
     setcolor(3);
-    line(x1 + 300, y1 + 250, x2 + 300, y2 + 250);
-    line(x2 + 300, y2 + 250, x3 + 300, y3 + 250);
-    line(x3 + 300, y3 + 250, x1 + 300, y1 + 250);
+    plot(x1,x2,x3,y1,y2,y3);
     printf("1.x axis:\n2.y axis:\n3.y=-x axis:\n4.y=x axis:\n");
     printf("Selection:");
     scanf("%d", &s);
-
     switch (s)
     {
     case 1:
     {
-        printf("triangle after reflection\n");
         setcolor(5);
-        line(x1 + 300, -y1 + 250, x2 + 300, -y2 + 250);
-        line(x2 + 300, -y2 + 250, x3 + 300, -y3 + 250);
-        line(x3 + 300, -y3 + 250, x1 + 300, -y1 + 250);
-        getch();
+		plot(x1,x2,x3,-y1,-y2,-y3);
         break;
     }
     case 2:
     {
-        printf("triangle after reflection\n");
         setcolor(5);
-        line(-x1 + 300, y1 + 250, -x2 + 300, y2 + 250);
-        line(-x2 + 300, y2 + 250, -x3 + 300, y3 + 250);
-        line(-x3 + 300, y3 + 250, -x1 + 300, y1 + 250);
-        getch();
+		plot(-x1,-x2,-x3,y1,y2,y3);
         break;
     }
     case 3:
     {
-        printf("triangle after reflection\n");
         setcolor(5);
-        line(-x1 + 300, -y1 + 250, -x2 + 300, -y2 + 250);
-        line(-x2 + 300, -y2 + 250, -x3 + 300, -y3 + 250);
-        line(-x3 + 300, -y3 + 250, -x1 + 300, -y1 + 250);
-        getch();
+		plot(-x1,-x2,-x3,-y1,-y2,-y3);
         break;
     }
     case 4:
     {
-        printf("triangle after reflection\n");
         setcolor(5);
-        line(y1 + 300, x1 + 250, y2 + 300, x2 + 250);
-        line(y2 + 300, x2 + 250, y3 + 300, x3 + 250);
-        line(y3 + 300, x3 + 250, y1 + 300, x1 + 250);
-        -getch();
-        break;
-    }
-    default:
-    {
-        printf("Invalid Selection\n");
+		plot(y1,y2,y3,x1,x2,x3);
         break;
     }
     }
+    getch();
     closegraph();
-    return 0;
 }
