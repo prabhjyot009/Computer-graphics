@@ -19,6 +19,8 @@ int main()
     setcolor(3);
     printf("Selection:");
     scanf("%d",s);
+    switch(s):
+    case 1:{
     printf("for sx enter value of sx:");
     scanf("%d", &sx);
     line(x1+300+(sx*y1),y1+250,x2+300+(sx*y2),y2+250);
@@ -26,6 +28,9 @@ int main()
     line(x3+300+(sx*y3),y3+250,x4+300+(sx*y4),y4+250);
     line(x4+300+(sx*y4),y4+250,x1+300+(sx*y1),y1+250);
     setcolor(4);
+    break;
+    }
+    case 2:{
     printf("for sy enter value of sy:");
     scanf("%d", &sy);
     line(x1+300,y1+250+(sy*x1),x2+300,y2+250+(sy*x2));
@@ -33,5 +38,7 @@ int main()
     line(x3+300,y3+250+(sy*x3),x4+300,y4+250+(sy*x4));
     line(x4+300,y4+250+(sy*x4),x1+300,y1+250+(sy*x1));
     setcolor(5);
+    break;
+    }
     getch();
 }
